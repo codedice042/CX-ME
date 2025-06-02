@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me – LuxPay</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #0e0f11;
+        color: #fff;
+        margin: 0;
+        padding: 0 20px 80px;
+      }
+
+      h2 {
+        text-align: center;
+        margin: 20px 0 10px;
+        color: #f4c542;
+      }
+
+      .section {
+        background-color: #1c1c1c;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .username {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #f4c542;
+        margin-bottom: 10px;
+      }
+
+      .invite {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2b2b2b;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+        font-size: 13px;
+      }
+
+      .invite button {
+        background: #f4c542;
+        color: #000;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .tier {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .tier span {
+        display: inline-block;
+        background-color: #4caf50;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-left: 8px;
+        color: #fff;
+      }
+
+      .earnings-total {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        color: #f4c542;
+        margin-top: 15px;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .metric-box {
+        background-color: #2a2a2a;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .metric-box h4 {
+        margin: 0;
+        font-size: 14px;
+        color: #bbb;
+      }
+
+      .metric-box p {
+        margin: 6px 0 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #f4c542;
+      }
+
+      nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 430px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #1e1f24;
+        padding: 10px 0 5px;
+        border-top: 1px solid #333;
+        z-index: 999;
+        margin-left: -20px;
+      }
+
+      nav a {
+        color: #aaa;
+        text-align: center;
+        text-decoration: none;
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a i {
+        font-size: 22px;
+        margin-bottom: 2px;
+        color: #f4c542;
+      }
+
+      .popup-menu {
+        display: none;
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #232428;
+        border: 1px solid #444;
+        border-radius: 12px;
+        padding: 12px;
+        z-index: 1000;
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .popup-menu a {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80px;
+        margin: 10px;
+        text-decoration: none;
+        color: #f1f1f1;
+        font-size: 11px;
+      }
+
+      .popup-menu a i {
+        font-size: 24px;
+        margin-bottom: 4px;
+        color: #f4c542;
+      }
+
+      @media only screen and (min-width: 600px) {
+        body {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My Profile</h2>
+
+    <div class="section">
+      <div class="username">Hi, Miriam</div>
+
+      <div class="invite">
+        <span>luxpay.com/referral/miriam23</span>
+        <button onclick="copyInvite()">Copy</button>
+      </div>
+
+      <div class="tier">Level: Explorer <span>Tier 2 – Active</span></div>
+
+      <div class="earnings-total">₦45,000</div>
+      <p style="text-align: center; font-size: 13px; color: #aaa">
+        Total Amount Earned
+      </p>
+
+      <div class="metrics">
+        <div class="metric-box">
+          <h4>Earned Today</h4>
+          <p>₦1,500</p>
+        </div>
+        <div class="metric-box">
+          <h4>This Month</h4>
+          <p>₦12,000</p>
+        </div>
+        <div class="metric-box">
+          <h4>Referral Earnings</h4>
+          <p>₦18,000</p>
+        </div>
+        <div class="metric-box">
+          <h4>People Invited</h4>
+          <p>27</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-menu" id="popupMenu">
+      <a href="withdraw.html"
+        ><i class="material-icons">account_balance</i>Withdraw</a
+      >
+      <a href="levels.html"><i class="material-icons">star_rate</i>Levels</a>
+      <a href="invest.html"><i class="material-icons">insights</i>Invest</a>
+    </div>
+
+    <nav>
+      <a href="index.html"><i class="material-icons">home</i>Home</a>
+      <a href="task.html"><i class="material-icons">check_circle</i>Tasks</a>
+      <a href="javascript:void(0);" onclick="togglePopup()">
+        <i class="material-icons">grid_view</i>More
+      </a>
+      <a href="profile.html"><i class="material-icons">person</i>Me</a>
+      <a href="fund.html"><i class="material-icons">wallet</i>Fund</a>
+    </nav>
+
+    <script>
+      function togglePopup() {
+        const popup = document.getElementById("popupMenu");
+        popup.style.display =
+          popup.style.display === "block" ? "none" : "block";
+      }
+
+      document.addEventListener("click", function (event) {
+        const popup = document.getElementById("popupMenu");
+        if (
+          !event.target.closest("nav a") &&
+          !event.target.closest("#popupMenu")
+        ) {
+          popup.style.display = "none";
+        }
+      });
+
+      function copyInvite() {
+        const text = "luxpay.com/referral/miriam23";
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Invite link copied!");
+        });
+      }
+    </script>
+  </body>
+</html>
