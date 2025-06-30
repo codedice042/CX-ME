@@ -21,6 +21,19 @@
         padding: 0 20px 80px;
       }
 
+      .profile-picture img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        margin-top: 20px;
+      }
+
+      .profile-picture {
+        padding-left: 150px;
+        padding-right: 150px;
+      }
+
       h2 {
         text-align: center;
         margin: 20px 0 10px;
@@ -186,8 +199,9 @@
     </style>
   </head>
   <body>
-    <h2>My Profile</h2>
-
+    <div class="profile-picture">
+      <img src="shin-min-jeong-.jpg" alt="builder-image" />
+    </div>
     <div class="section">
       <div class="username">Hi, Miriam</div>
 
@@ -196,7 +210,7 @@
         <button onclick="copyInvite()">Copy</button>
       </div>
 
-      <div class="tier">Level: Explorer <span>Tier 2 – Active</span></div>
+      <div class="tier">Level 2: Explorer <span>✔ Active</span></div>
 
       <div class="earnings-total">₦45,000</div>
       <p style="text-align: center; font-size: 13px; color: #aaa">
